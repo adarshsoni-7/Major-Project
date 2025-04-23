@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate") %>
+ 
+<div id="filters">
+  <div class="filter">
+    <div><span class="material-symbols-outlined">farm</span></div>
+    <p>Farms</p>
+  </div>
+
+  <div class="filter">
+    <div><i class="fa-solid fa-bed"></i></div>
+    <p>Rooms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fas fa-camera-retro"></i></div>
+    <p>Amazing Views</p>
+  </div>
+
+  <div class="filter">
+    <div><i class="fas fa-building"></i></div>
+    <p>Iconic Cities</p>
+  </div>
+
+  <div class="filter">
+    <div><span class="material-symbols-outlined">surfing</span></div>
+    <p>Surfing</p>
+  </div>
+  <div class="filter">
+    <div><i class="fas fa-swimming-pool"></i></div>
+    <p>Amazing pools</p>
+  </div>
+  <div class="filter">
+    <div><i class="fas fa-umbrella-beach"></i></div>
+    <p>Beach</p>
+  </div>
+  <div class="filter">
+    <div><span class="material-symbols-outlined">Cabin</span></div>
+    <p>Cabin</p>
+  </div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="switchCheckChecked"
+         
+      />
+      <label class="form-check-label" for="switchCheckChecked" 
+        >Display total before taxes</label
+      >
+    </div>
+  </div>
+</div>
+
+<div class="row  row-cols-lg-4 row-cols-md-2 row-cols-sm-1">
+  <% for(list of allListings) { %>
+  <a href="/listings/<%=list._id %>" class="list-link">
+    <div class="card col listing-card">
+      <img
+        src="<%= list.image.url %>"
+        style="height: 20rem"
+        class="card-img-top"
+        alt="list-img"
+      />
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text">
+          <b> <%= list.title %></b>
+          <p>&#8377; <%= list.price.toLocaleString("en-IN")%>/night 
+          <i class="tax-info">+18% GST</i></p>
+        </p>
+      </div>
+    </div>
+    <% } %> 
+ 
+  </a>
+</div>
+
+
+<script>
+  const toggleBtn = document.querySelector("#switchCheckChecked");
+  const taxSwitch = document.querySelectorAll(".tax-info");
+  toggleBtn.addEventListener("click", () => {
+    taxSwitch.forEach((el ) => {
+      if(el.style.display === "inline") {
+      el.style.display = "none";
+      } 
+    else {
+      el.style.display = "inline";
+    }
+    })
+  })  
+</script>

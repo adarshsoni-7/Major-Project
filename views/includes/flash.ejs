@@ -1,0 +1,17 @@
+<% if(success && success.length) { %>
+<div
+  class="alert alert-success mt-2 alert dimissable fade show success-alert col-6 offset-3"
+  role="alert"
+>
+  <%=success %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<% } %> <% if(error && error.length) { %>
+<div
+  class="alert alert-danger mt-2 alert dimissable fade show success-alert col-6 offset-3"
+  role="alert"
+>
+  <%=error %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+<% } %>

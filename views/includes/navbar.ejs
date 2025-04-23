@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand company-logo" href="/listings"></a>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/029/709/769/large_2x/airbnb-logo-transparent-free-png.png"
+      class="company-logo"
+      alt="logo"
+    />
+
+    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" role="search">
+          <input type="text" class="form-control me-2 inp-box " type="search" placeholder="Search destinations" aria-label="Search">
+          <button class="btn btn-outline-danger search-btn" type="submit">Search<i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your place</a>
+        <% if(!currUser) { %>
+        <a class="nav-link btn btn-outline-primary signupbtn" href="/signup"><b>Sign Up</b></a>
+           </a
+        >
+        <a class="nav-link btn btn-outline-primary loginbtn" href="/login"
+          ><b>Login</b></a
+        >
+        <% } %> <% if(currUser) { %>
+        <a class="nav-link btn btn-outline-danger logoutbtn" href="/logout"
+          ><b>Logout</b></a
+        >
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
