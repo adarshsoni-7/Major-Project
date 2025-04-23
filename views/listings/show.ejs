@@ -115,7 +115,9 @@
         action="/listings/<%= listing._id %>/reviews/<%= review.id %>?_method=DELETE"
         class="mb-3 mt-2"
       >
+        <% if(currUser) { %>
         <button class="btn btn-sm btn-dark">Delete Review</button>
+        <%} %>
       </form>
       <% } %>
     </div>
