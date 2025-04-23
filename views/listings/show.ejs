@@ -117,6 +117,8 @@
       >
         <% if(currUser && currUser._id.equals(review.author._id)) { %>
         <button class="btn btn-sm btn-dark">Delete Review</button>
+        <p><%= currUser._id %></p>
+        <p><%= review.author._id %></p>
         <% } %>
       </form>
       <% } %>
