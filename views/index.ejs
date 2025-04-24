@@ -95,7 +95,7 @@
   filters.forEach(filter => {
     filter.addEventListener("click", () => {
       const selectedCategory = filter.getAttribute("data-category").toLowerCase();
-      const filteredListings = listings.filter(listings => listings.category.toLowerCase() === selectedCategory);
+      const filteredListings = allListing.filter(listings => listings.category.toLowerCase() === selectedCategory);
       renderListings(filteredListings);
     });
   });
