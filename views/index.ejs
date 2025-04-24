@@ -1,4 +1,7 @@
 <% layout("/layouts/boilerplate") %>
+<script>
+  const allListings = <%- JSON.stringify(allListings) %>;
+</script>
   
 <div id="filters">
   <div class="filter" data-category="trending"><div><i class="fa-solid fa-fire"></i></div><p>Trending</p></div>
@@ -80,12 +83,12 @@
     listArray.forEach(listing => {
       listingGrid.innerHTML += `
         <div class="listing-card">
-          <a href="/listings/${allListings._id}">
-            <img src="${allListings.image.url || allListings.image}" class="card-img-top" alt="listing-image">
+          <a href="/listings/${listing._id}">
+            <img src="${listing.image.url || listing.image}" class="card-img-top" alt="listing-image">
             <div class="listing-info">
-              <h3>${allListings.title}</h3>
-              <p class="description">${allListings.description.substring(0, 60)}...</p>
-              <p class="price">₹${allListings.price}/night</p><i class="tax-info">+18% GST</i>
+              <h3>${listing.title}</h3>
+              <p class="description">${listing.description.substring(0, 60)}...</p>
+              <p class="price">₹${listing.price}/night</p><i class="tax-info">+18% GST</i>
             </div>
           </a>
         </div>`;
