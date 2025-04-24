@@ -99,6 +99,7 @@
     filter.addEventListener("click", () => {
       console.log("Helooooooooo!");
       const selectedCategory = filter.getAttribute("data-category").toLowerCase();
+      console.log(allListings);
       const filteredListings = allListings.filter(listings => listings.category.toLowerCase() === selectedCategory);
       renderListings(filteredListings);
     });
