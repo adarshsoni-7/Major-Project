@@ -59,7 +59,7 @@ main()
     console.error("Error connecting to MongoDB:", err);
   });
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
+  await mongoose.connect(ATLASDB_URL);
 }
 
 app.use(session(sessionOptions));
