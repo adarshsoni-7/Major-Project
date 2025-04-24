@@ -43,7 +43,8 @@ module.exports.create = async (req, res) => {
   let url = req.file.path;
   let filename = req.file.filename;
 
-  let { title, description, image, price, location, country } = req.body;
+  let { title, description, image, price, location, country, category } =
+    req.body;
   const newListing = new Listing({
     title,
     description,
@@ -51,6 +52,7 @@ module.exports.create = async (req, res) => {
     price,
     location,
     country,
+    category,
   });
   newListing.owner = req.user._id;
 
