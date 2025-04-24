@@ -28,7 +28,6 @@ body {
 .navbar {
   height: 5rem;
   background-color: #fff;
-  display: flex;
 }
 
 .fa-compass {
@@ -220,6 +219,10 @@ body {
 }
 
 .inp-box {
+  padding: 0.5vw 2vw !important;
+  border-radius: 2vw !important;
+}
+#exampleDataList {
   padding: 0.5vw 2vw !important;
   border-radius: 2vw !important;
 }
