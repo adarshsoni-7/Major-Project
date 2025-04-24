@@ -24,7 +24,8 @@
       <p><%=listing.country %></p>
     </div>
   </div>
-  <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
+  <% if(typeof currUser !== 'undefined' && currUser && String(currUser._id) ===
+  String(listing.owner._id)) { %>
   <div class="btns">
     <a
       href="/listings/<%= listing._id %>/edit"
@@ -40,7 +41,7 @@
   <hr />
 
   <div class="col-8 offset-3 mb-3">
-    <% if(currUser) { %>
+    <% if(typeof currUser !== 'undefined' && currUser) { %>
     <form
       method="POST"
       action="/listings/<%=listing._id%>/reviews"
@@ -62,7 +63,6 @@
             value="1"
             checked
           />
-
           <input type="radio" id="first-rate1" name="rating" value="1" />
           <label for="first-rate1" title="Terrible">1 star</label>
           <input type="radio" id="first-rate2" name="rating" value="2" />
@@ -99,6 +99,7 @@
     </form>
     <% } %>
   </div>
+
   <% if(listing.reviews.length != 0) { %>
   <div class="row">
     <% for(review of listing.reviews) { %>
@@ -109,20 +110,17 @@
         <p class="card-text">&#11088;<%= review.rating %></p>
         <p class="starability-result" data-rating="<%= review.rating %>"></p>
       </div>
-      <% if(currUser) { %>
+      <% if(typeof currUser !== 'undefined' && currUser && String(currUser._id)
+      === String(review.author._id)) { %>
       <form
         method="POST"
         action="/listings/<%= listing._id %>/reviews/<%= review.id %>?_method=DELETE"
         class="mb-3 mt-2"
       >
-        <% if(currUser && currUser._id.equals(review.author._id)) { %>
         <button class="btn btn-sm btn-dark">Delete Review</button>
-
-        <% } %>
       </form>
       <% } %>
     </div>
-
     <% } %>
   </div>
 
