@@ -28,6 +28,7 @@ body {
 .navbar {
   height: 5rem;
   background-color: #fff;
+  display: flex;
 }
 
 .fa-compass {
