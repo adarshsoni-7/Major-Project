@@ -173,6 +173,7 @@ body {
 #filters {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .filter {
