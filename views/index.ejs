@@ -81,7 +81,7 @@
       return;
     } 
     else if (!listArray.location) {
-      listingGrid.innerHTML = "<h3>No listings found in this location</h3>";
+      listingGrid.innerHTML = "<h3>No listings found in this category</h3>";
       return;
 
     }
@@ -110,6 +110,7 @@
 
 
   document.querySelector(".search-btn").addEventListener("click", () => {
+    event.preventDefault();
   let searchInput = document.querySelector(".inp-box").value.trim().toLowerCase();
 searchInput = "";
   const filteredListings = allListings.filter(listing => 
