@@ -77,14 +77,10 @@
   function renderListings(listArray) {
     listingGrid.innerHTML = "";
     if (listArray.length === 0) {
-      listingGrid.innerHTML = "<h3>No listings found in this category</h3>";
+      listingGrid.innerHTML = "<h3>No listings found</h3>";
       return;
     } 
-    else if (!listArray.location) {
-      listingGrid.innerHTML = "<h3>No listings found in this location</h3>";
-      return;
-
-    }
+     
     listArray.forEach(listing => {
       listingGrid.innerHTML += `
         <div class="listing-card">
@@ -109,14 +105,16 @@
   });
 
 
-  document.querySelector(".search-btn").addEventListener("click", () => {
-   
+ document.querySelector(".search-btn").addEventListener("click", (event) => {
+  event.preventDefault();   // 👈 Add this!
+
   let searchInput = document.querySelector(".inp-box").value.trim().toLowerCase();
-searchInput = "";
+
   const filteredListings = allListings.filter(listing => 
     listing.location.toLowerCase().includes(searchInput)
   );
 
   renderListings(filteredListings);
 });
+ 
 </script>
