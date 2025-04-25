@@ -105,8 +105,12 @@
 
 
   document.querySelector(".search-btn").addEventListener("click", () => {
-     
-   let data = document.querySelector(".inp-box").value;
-   console.log(data);
-  })
+  let searchInput = document.querySelector(".inp-box").value.trim().toLowerCase();
+
+  const filteredListings = allListings.filter(listing => 
+    listing.location.toLowerCase().includes(searchInput)
+  );
+
+  renderListings(filteredListings);
+});
 </script>
