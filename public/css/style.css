@@ -229,6 +229,6 @@ body {
   border-radius: 2vw !important;
 }
 
-#listingGrid h3 {
-  color: red;
+#listingGrid b {
+  color: black;
 }
