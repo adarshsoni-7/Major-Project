@@ -228,3 +228,7 @@ body {
   padding: 0.5vw 2vw !important;
   border-radius: 2vw !important;
 }
+
+#listingGrid h3 {
+  color: red;
+}
