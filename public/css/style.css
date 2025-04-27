@@ -232,5 +232,5 @@ body {
 #listingGrid b,
 a,
 p {
-  color: black;
+  color: black !important;
 }
