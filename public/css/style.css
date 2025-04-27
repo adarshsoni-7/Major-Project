@@ -229,7 +229,7 @@ body {
   border-radius: 2vw !important;
 }
 
-#listingGrid b {
+#listingGrid {
   color: black;
   text-decoration: none;
 }
