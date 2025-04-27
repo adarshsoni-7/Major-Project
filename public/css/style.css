@@ -229,7 +229,8 @@ body {
   border-radius: 2vw !important;
 }
 
-#listing-info a {
-  color: black !important;
-  text-decoration: none !important;
+#listingGrid b,
+a,
+p {
+  color: black;
 }
