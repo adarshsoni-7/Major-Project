@@ -232,3 +232,7 @@ body {
 #listingGrid b {
   color: black !important;
 }
+
+#listingGrid a {
+  text-decoration: none !important;
+}
