@@ -86,7 +86,7 @@ module.exports.edit = async (req, res) => {
 module.exports.update = async (req, res) => {
   let { id } = req.params;
   let { title, description, image, price, location, country, category } = req.body;
-
+  console.log(category);
   let listing = await Listing.findByIdAndUpdate(id, {
     title,
     description,
