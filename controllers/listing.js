@@ -95,7 +95,9 @@ module.exports.update = async (req, res) => {
     location,
     country,
     category
-  });
+  }, { new: true, runValidators: true }
+  );
+   
 
   if (location) {
     let response = await geocodingClient
