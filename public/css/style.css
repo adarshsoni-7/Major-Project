@@ -1,6 +1,6 @@
 @font-face {
   font-family: now;
-  src: url(HelveticaNowText-Regular.ttf);
+  src: url(my.ttf);
 }
 * {
   margin: 0;
@@ -243,7 +243,6 @@ b {
 
 @media screen and (max-width: 600px) {
   .search-btn:hover {
-  background-color: #050505dc !important;
-}
-
+    background-color: #050505dc !important;
+  }
 }
