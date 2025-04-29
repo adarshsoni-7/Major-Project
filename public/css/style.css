@@ -213,7 +213,7 @@ body {
 }
 
 .search-btn:hover {
-  background-color: #ff002f !important;
+  background-color: #a20320dc !important;
 }
 
 .search-btn i {
@@ -239,4 +239,11 @@ b {
 
 #listingGrid b {
   margin-bottom: 2vw;
+}
+
+@media screen and (max-width: 600px) {
+  .search-btn:hover {
+  background-color: #050505dc !important;
+}
+
 }
